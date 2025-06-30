@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['user_id']); // or your session variable for logged in user
+?>
 <header style="background-color: #fff; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between;">
     <div style="display: flex; align-items: center;">
         <a href="index.php" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
@@ -6,21 +9,39 @@
             <h1 style="margin: 0; font-size: 1.5em;">CestaFresca</h1>
         </a>
     </div>
-    <div style="display: flex; align-items: center; gap: 18px;">
-        <span style="margin-right: 15px;">Área do Utilizador</span>
-        <a href="#" id="btn-login" style="background-color: #27ae60; color: white; padding: 8px 12px; text-decoration: none; border-radius: 4px; margin-right: 5px;">Login</a>
-        <a href="#" id="btn-register" style="background-color: #3498db; color: white; padding: 8px 12px; text-decoration: none; border-radius: 4px;">Registar</a>
-        <form class="search-bar" style="margin-left: 24px;">
-            <input type="text" placeholder="Pesquisar produtos...">
-            <button type="submit">
-                <span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <circle cx="9" cy="9" r="7" stroke="#888" stroke-width="2"/>
-                        <line x1="14.2" y1="14.2" x2="18" y2="18" stroke="#888" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </span>
-            </button>
-        </form>
+    <div id="user-area" style="display: flex; align-items: center; gap: 18px;">
+      <!-- search bar -->
+      <form class="search-bar" style="margin-left: 55px;">
+          <input type="text" placeholder="Pesquisar produtos...">
+          <button type="submit">
+              <span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <circle cx="9" cy="9" r="7" stroke="#888" stroke-width="2"/>
+                      <line x1="14.2" y1="14.2" x2="18" y2="18" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+              </span>
+          </button>
+      </form>
+      <!-- icon utilizador -->
+      <div style="position: relative; display: flex; align-items: center;">
+        <button id="user-menu-btn" style="background:none; border:none; cursor:pointer; display:flex; align-items:center;">
+            <img src="assets/icons/perfil-de-usuario.png" alt="User Icon" style="height: 30px; width: 30px; border-radius: 50%;">
+        </button>
+        <div id="user-dropdown" style="display:none; position:absolute; top:40px; right:0; background:#fff; border-radius:10px; box-shadow:0 4px 16px rgba(0,0,0,0.12); min-width:160px; z-index:100;">
+            <a href="#" id="btn-login" style="display:flex; align-items:center; padding:10px 18px; color:#27ae60; text-decoration:none; border-bottom:1px solid #eee;">
+                <img src="assets/icons/login-do-usuario.png" alt="Login Icon" style="height:18px; width:18px; margin-right:8px;"></a>
+            <a href="#" id="btn-register" style="display:flex; align-items:center; padding:10px 18px; color:#3498db; text-decoration:none; border-bottom:1px solid #eee;">
+                <img src="assets/icons/adicionar-usuario.png" alt="Register Icon" style="height:18px; width:18px; margin-right:8px;"></a>
+            <?php if ($isLoggedIn): ?>
+            <a href="pages/auth/logout.php" id="btn-logout" style="display:flex; align-items:center; padding:10px 18px; color:#e74c3c; text-decoration:none;">
+                <img src="assets/icons/sair-do-usuario.png" alt="Logout Icon" style="height:18px; width:18px; margin-right:8px;"></a>
+            <?php endif; ?>
+        </div>
+      </div>
+      <!-- carrinho -->
+      <button id="cart-btn" style="background:none; border:none; cursor:pointer; display:flex; align-items:center;">
+          <img src="assets/icons/shopping-cart.png" alt="Cart Icon" style="height: 30px; width: 30px;">
+       
     </div>
 </header>
 <!-- Login Modal -->

@@ -52,33 +52,9 @@ document.addEventListener('DOMContentLoaded', function () {
         cart.style.transition = '';
         document.body.style.userSelect = '';
     });
+});
 
-    // Cart open/close and show items
-    const openCartBtn = document.getElementById('open-cart-btn');
-    const cartItemsDiv = document.getElementById('cart-items');
-
-    openCartBtn.addEventListener('click', function() {
-        if (cartItemsDiv.style.display === 'none' || cartItemsDiv.style.display === '') {
-            // Load items from localStorage
-            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-            if (carrinho.length === 0) {
-                cartItemsDiv.innerHTML = '<em>Carrinho vazio.</em>';
-            } else {
-                cartItemsDiv.innerHTML = carrinho.map(item =>
-                    `<div>
-                        <strong>${item.nome}</strong> (${item.quantidade} x €${item.preco})<br>
-                        <span style="font-size:0.9em;color:#888;">Subtotal: €${(item.preco * item.quantidade).toFixed(2)}</span>
-                    </div><hr style="margin:6px 0;">`
-                ).join('');
-            }
-            cartItemsDiv.style.display = 'block';
-            openCartBtn.textContent = 'Fechar Itens';
-        } else {
-            cartItemsDiv.style.display = 'none';
-            openCartBtn.textContent = 'Ver Itens';
-        }
-    });
-
+document.addEventListener('DOMContentLoaded', function () {
     fetch('php/carregar_produtos.php')
         .then(res => res.json())
         .then(produtos => {

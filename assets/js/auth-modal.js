@@ -36,4 +36,20 @@ document.addEventListener('DOMContentLoaded', function () {
             modalRegister.style.display = 'none';
         }
     };
+
+    // User dropdown menu logic
+    const userMenuBtn = document.getElementById('user-menu-btn');
+    const userDropdown = document.getElementById('user-dropdown');
+    if (userMenuBtn && userDropdown) {
+        userMenuBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            userDropdown.style.display = userDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', function () {
+            userDropdown.style.display = 'none';
+        });
+        userDropdown.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    }
 });
