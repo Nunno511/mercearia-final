@@ -1,7 +1,9 @@
 <header style="background-color: #fff; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between;">
     <div style="display: flex; align-items: center;">
-        <img src="assets/images/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
-        <h1 style="margin: 0; font-size: 1.5em;">CestaFresca</h1>
+        <a href="index.php" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <img src="assets/images/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+            <h1 style="margin: 0; font-size: 1.5em;">CestaFresca</h1>
+        </a>
     </div>
     <div style="flex-grow: 1; text-align: center;">
         <input type="text" placeholder="Pesquisar produtos..." style="padding: 8px; width: 60%; max-width: 400px; border: 1px solid #ccc; border-radius: 4px;">
