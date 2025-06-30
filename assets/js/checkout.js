@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
             nome: form.nome.value,
             data_nascimento: form.data_nascimento.value,
             morada: form.morada.value,
+            tipo_pagamento: form.tipo_pagamento.value, // Added payment type
             produtos: carrinho,
             preco_total: total,
             utilizador_id: form.utilizador_id.value

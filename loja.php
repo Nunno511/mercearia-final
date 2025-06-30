@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<h1>Esta Semana</h1>
+<h1 class="sales-title">Promoção da semana</h1>
 <div class="slideshow-container" id="slideshow-produtos">
     <!-- Slides will be injected here by JS -->
 </div>

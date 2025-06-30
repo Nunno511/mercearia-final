@@ -222,10 +222,11 @@ img.portfolio-thumb:hover {
     height: 300px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 30px;
+    margin: 30px auto 30px auto; /* Center horizontally with auto */
     border: 2px solid #ccc;
     border-radius: 10px;
     background: #f8f8f8;
+    display: block;
 }
 
 .slide {
@@ -356,7 +357,50 @@ img.portfolio-thumb:hover {
     margin-top: 8px; /* Extra space above the checkout button */
 }
 
+@keyframes cart-shake {
+    0% { transform: scale(1.12) translateX(0); }
+    20% { transform: scale(1.12) translateX(-2px); }
+    40% { transform: scale(1.12) translateX(2px); }
+    60% { transform: scale(1.12) translateX(-2px); }
+    80% { transform: scale(1.12) translateX(2px); }
+    100% { transform: scale(1.12) translateX(0); }
+}
+
 #open-cart-btn:hover,
 #finalizar-btn:hover {
     background-color: #217dbb;
+    animation: cart-shake 0.4s;
+}
+
+/* Category links default and hover effect */
+nav a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 
+        color 0.2s,
+        background 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
+    padding: 6px 14px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #fff200;
+    background: #222;
+    transform: scale(1.12);
+    box-shadow: 0 2px 10px rgba(255, 242, 0, 0.15);
+}
+
+.sales-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 32px;
+    margin-bottom: 10px;
+    color: #27ae60;
+    letter-spacing: 1px;
+    font-family: SpecialElite-Regular, Arial, sans-serif;
 }
