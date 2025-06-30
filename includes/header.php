@@ -1,3 +1,4 @@
+
 <header style="background-color: #fff; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between;">
     <div style="display: flex; align-items: center;">
         <a href="index.php" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
@@ -5,13 +6,21 @@
             <h1 style="margin: 0; font-size: 1.5em;">CestaFresca</h1>
         </a>
     </div>
-    <div style="flex-grow: 1; text-align: center;">
-        <input type="text" placeholder="Pesquisar produtos..." style="padding: 8px; width: 60%; max-width: 400px; border: 1px solid #ccc; border-radius: 4px;">
-    </div>
-    <div>
+    <div style="display: flex; align-items: center; gap: 18px;">
         <span style="margin-right: 15px;">Área do Utilizador</span>
         <a href="#" id="btn-login" style="background-color: #27ae60; color: white; padding: 8px 12px; text-decoration: none; border-radius: 4px; margin-right: 5px;">Login</a>
         <a href="#" id="btn-register" style="background-color: #3498db; color: white; padding: 8px 12px; text-decoration: none; border-radius: 4px;">Registar</a>
+        <form class="search-bar" style="margin-left: 24px;">
+            <input type="text" placeholder="Pesquisar produtos...">
+            <button type="submit">
+                <span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="#888" stroke-width="2"/>
+                        <line x1="14.2" y1="14.2" x2="18" y2="18" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </span>
+            </button>
+        </form>
     </div>
 </header>
 <!-- Login Modal -->
